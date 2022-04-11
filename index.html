@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<title>A Free Wafer Plotting Software for Semiconductor Engineers</title>  
+<meta name="description" content="Wafer Data Visualization: WaferViz.">
+  
+<style>
+body {width: 100%; height: 100%; font-family: sans-serif;} 
+  
+img {width: 100%; height: auto;}
 
+.sidenav {height: 100%; width: 150px; position: fixed; z-index: 1; top: 0; left: 0; background-color: #f1f1f1; overflow-x: hidden; padding-top: 60px;}
+
+.sidenav a {padding: 8px 8px 8px 32px; text-decoration: none; font-size:14px; display: block;}
+
+<!--.sidenav a:hover {color: #006699;}-->
+
+.main {margin-left: 180px; /* Same as the width of the sidenav */margin-right: 18px; font-size: 14px; /* Increased text to enable scrolling */padding: 10px 10px;}
+
+@media screen and (max-height: 450px) {.sidenav {padding-top: 15px;}.sidenav a {font-size: 16px;}}
+  
+h1 {font-family: Trebuchet MS, Helvetica, sans-serif; font-size: 28px; color: #006699;}
+h2 {font-family: Helvetica, Arial, sans-serif; font-size: 14px; color: #006699;} 
+h3 {font-family: Helvetica, Arial, sans-serif; font-size: 14px; color: #006699;}   
+p {font-family: Helvetica, Arial, sans-serif; font-size: 14px;}  
+  
+</style>  
+</head>
+  
+<body>
+<div class="sidenav">
+  <a href="https://github.com/lihou0427/WaferViz/raw/master/WaferViz_5.6.exe">Download</a>
+  <a href="https://www.linkedin.com/in/li-hou-aba82728/">LinkedIn</a>
+  <a href="mailto: li.hou2009@gmail.com">Send Email</a>
+  
+</div>
+
+<div class="main">
+  <h1>Wafer Visualization - WaferViz</h1>
+  
+  <h2>About</h2>
+  <p>WaferViz is a free wafer plotting software intended for semiconductor engineers.</p>
+  <p>As a process engineer the author found it is helpful having plotting program handy for converting raw data to presentable graphs since in fabs where plotting programs are often embedded in metrology tools and not readily accessible.</p>
+  
+  <h2>Key Features</h2>
+  
+  <p>- 3d maps with profile decomposition:</p>
+  <img src="example1.png" alt="example1" width="1280" height="720">
+  
+  <p>- 2d maps with rotation:</p>
+  <p>- Cross sections:</p>
+  <img src="example2.png" alt="example2" width="1280" height="720">
+  
+  <p>- Thickness as radius and theta increasing:</p> 
+  <p>- Thickness distribution:</p>
+  <img src="example3.png" alt="example3" width="1280" height="720">
+  
+  <h2>User Guide</h2>
+  
+  <p>- Download app:</p>
+  <p>Click "Download" in the left sidebar. Ignore some warnings imposed by Windows and you should have user interface of the app as following image.</p>
+  <img src="ui.png" alt="App interface" width="1280" height="720">
+  
+  <p>- Prepare datasheet:</p>
+  <p>Make an excel workbook that contains raw data and associated coordination you want to plot. Paste coordination into columns "A" and "B". Paste film thickness into columns from "C" to "V" starting from row "2". Up to 20 films can be loaded once. You may want to add notes to row "1" and that wouldn't affect software plotting.</p>
+  <p>The data could be arranged as shown below.</p>
+  
+  <img src="load.png" alt="load data sheet" width="1280" height="720">
+  
+  <p>- Load datasheet:</p>
+  <p>Click "Load" button in UI and select the workbook you have just prepared. Click "Open" and enter ID for this batch. Use alphabet numbers and underscores to avoid any errors.</p>
+  
+  <p>- Plot graphs:</p>
+  <p>Use two dropdown buttons "T1=C" and "T2=D" in UI to select the two films of pre-process and post-process in databook you want to plot. "T1" and "T2" represent thickness (or other parameters like temperature, sheet resistance, etc.) of two films. In single-film case just select that film from dropdown button "T1=C" and select "0" from dropdown button "T2=D".</p>
+  <p>Click "Run" button in UI to plot. If "Decompose" box is checked the calculation is slowed down due to the nature of interpreted language of Python.</p>
+  
+  <p>You may need to adjust pre-set configurations in UI for plotting.</p>
+  
+  
+  <p>- Save graphs:</p>
+  <p>Clicking "Run" button is only showing maps on screen for quick evaluation. Whenever the "Save" button in the UI is clicked, all graphs displayed in UI are automatically saved as an excel file stored in a self-generated folder named "Saved Graphs". The folder is under the same directory as WaferViz located. The saved file has self-generated name with id and time stamp.</p>
+  <p>Saved Excel sheet should be similar to below example.</p>
+  <img src="save.png" alt="data sheet generated" width="1280" height="720">
+  
+</div>
+   
+</body>
+</html> 
+
+© 2022 GitHub, Inc.
